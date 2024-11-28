@@ -1,8 +1,7 @@
--- 建数据库
-DROP DATABASE IF EXISTS ecommerce-c2c;
-CREATE DATABASE ecommerce-c2c CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+DROP DATABASE IF EXISTS ecommerce_c2c;
+CREATE DATABASE ecommerce_c2c CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-use ecommerce-c2c;
+use ecommerce_c2c;
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (

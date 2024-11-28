@@ -7,13 +7,13 @@ import (
 )
 
 func main() {
-	// 初始化数据库
+	// Initialize database
 	models.InitDB()
 
-	// 初始化路由
+	// Initialize router
 	r := routes.InitRoutes()
 
-	// 启动服务器
+	// Run server
 	log.Println("Server is running on http://localhost:8080")
 	if err := r.Run(":8080"); err != nil {
 		log.Fatalf("Failed to start the server: %v", err)
