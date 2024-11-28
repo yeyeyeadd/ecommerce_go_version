@@ -3,6 +3,7 @@ package controllers
 import (
 	"ecommerce-api/models"
 	"github.com/golang-jwt/jwt/v4"
+	"log"
 	"net/http"
 	"os"
 	"time"
@@ -19,10 +20,12 @@ func Register(c *gin.Context) {
 		Password string `json:"password" binding:"required,min=6"`
 	}
 	if err := c.ShouldBindJSON(&input); err != nil {
+		log.Printf("Parsed input: %+v", input)
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
+	log.Printf("Parsed input22: %+v", input)
 	// Check if there are duplicate users
 	var existingUser models.User
 	if err := models.DB.Where("email = ?", input.Email).First(&existingUser).Error; err == nil {

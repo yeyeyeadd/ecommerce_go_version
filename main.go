@@ -1,14 +1,14 @@
 package main
 
 import (
-	"ecommerce-api/config"
+	"ecommerce-api/models"
 	"ecommerce-api/routes"
 	"log"
 )
 
 func main() {
 	// 初始化数据库
-	config.InitDB()
+	models.InitDB()
 
 	// 初始化路由
 	r := routes.InitRoutes()
