@@ -14,16 +14,6 @@ import (
 
 // Register User
 func Register(c *gin.Context) {
-	/*body, err := ioutil.ReadAll(c.Request.Body)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request body"})
-		return
-	}
-	log.Printf("Request body: %s", string(body))
-
-	// 将 body 数据重新写回给 c.Request.Body，供后续解析
-	c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(body))*/
-
 	var input struct {
 		Username string `json:"username" binding:"required"`
 		Email    string `json:"email" binding:"required,email"`
