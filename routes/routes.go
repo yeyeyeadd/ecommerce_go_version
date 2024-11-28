@@ -25,3 +25,13 @@ func InitRoutes() *gin.Engine {
 
 	return router
 }
+
+func SetupRouter() *gin.Engine {
+	router := gin.Default()
+	router.POST("/users/register", controllers.Register)
+	router.POST("/users/login", controllers.Login)
+	router.GET("/products", controllers.GetProducts)
+	router.POST("/products", controllers.CreateProduct)
+	router.POST("/orders", controllers.CreateOrder)
+	return router
+}
