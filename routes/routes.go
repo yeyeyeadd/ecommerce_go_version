@@ -12,7 +12,6 @@ func InitRoutes() *gin.Engine {
 	// User routing
 	router.POST("/users/register", controllers.Register)
 	router.POST("/users/login", controllers.Login)
-	router.POST("/users/login", controllers.Login)
 
 	// Product routing
 	router.GET("/products", controllers.GetProducts)
