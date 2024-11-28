@@ -16,7 +16,7 @@ import (
 
 func TestRegisterUser(t *testing.T) {
 	r := gin.Default()
-	r.POST("/users/register", controllers.Register) // 使用 controllers.Register
+	r.POST("/users/register", controllers.Register) // controllers.Register
 
 	body := []byte(`{"username":"testuser", "email":"test@example.com", "password":"password123"}`)
 	req, _ := http.NewRequest("POST", "/users/register", bytes.NewBuffer(body))
